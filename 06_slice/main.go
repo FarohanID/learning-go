@@ -3,24 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	// Membuat Slice berisi hobi
-	hobi := []string{"Coding", "Lari", "Membaca"}
-
-	// Menambah isi Slice menggunakan 'append'
-	hobi = append(hobi, "Traveling")
-
-	// Menampilkan isi Slice
-	fmt.Println("Daftar Hobi saya:")
-
-	// Menggabungkan ilmu Looping dan Slice
-	for i, data := range hobi {
+	buah := []string{"apel", "jeruk", "mangga"} // membuat slice dengan literal
+	buah = append(buah, "nanas")                // menambahkan elemen baru ke dalam slice
+	semuaBuah := buah                           // membuat slice baru yang merujuk ke data yang sama dengan slice buah
+	for i, data := range semuaBuah {
 		fmt.Printf("%d. %s\n", i+1, data)
 	}
 
-	// penjelasan:
-	// 1. Kita membuat Slice dengan tipe data string yang berisi beberapa hobi.
-	// 2. Kita menggunakan fungsi 'append' untuk menambahkan hobi baru ke dalam Slice.
-	// 3. Kita menggunakan Looping 'for' dengan 'range' untuk menampilkan setiap hobi beserta indeksnya.
-	// i+1 digunakan untuk menampilkan nomor urut mulai dari 1, karena indeks dalam Slice dimulai dari 0.
-	// Output yang dihasilkan akan menampilkan daftar hobi dengan nomor urutnya.
+	fmt.Println("Jumlah buah yang saya punya adalah", len(buah))   // mencetak jumlah elemen dalam slice
+	fmt.Println("Tapi buah yang paling saya suka adalah", buah[3]) // mencetak elemen ke-4 dari slice buah
+	fmt.Println("Sebenarnya saya tidak suka buah", semuaBuah[1])   // mencetak elemen ke-2 dari slice semuaBuah
+	fmt.Println("Tapi saya suka buah", semuaBuah[0:2])             // mencetak elemen ke-1 sampai ke-2 dari slice semuaBuah
 }
